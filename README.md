@@ -1,5 +1,29 @@
 # README
 
+### Tasks
+
+[x] Search form 
+[x] Popular movies at the home page 
+[x] Bootstrap for Server Side Rendering 
+
+---
+
+1. Add link to top_rated movie 
+2. Change *top_films_path* to the more useful 
+3. Luink to the button Details
+4. Change search page and url 
+5. Deploy to heroku 
+
+---
+
+### First Install 
+
+If you're clonning this repo to install all Rails gems localy type: 
+
+> bundle install
+
+--- 
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
@@ -32,8 +56,6 @@ Things you may want to cover:
 > rails generate controller Welcome index
 > the controller located *app/controllers/welcome_controller.rb*
 > the view *app/view/welcome/index.html.erb*
-
-
 
 ---
 
