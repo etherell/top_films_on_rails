@@ -2,9 +2,9 @@
 
 ### Tasks
 
-[x] Search form 
-[x] Popular movies at the home page 
-[x] Bootstrap for Server Side Rendering 
+1. [x] Search form 
+2. [x] Popular movies at the home page 
+3. [x] Bootstrap for Server Side Rendering 
 
 ---
 
