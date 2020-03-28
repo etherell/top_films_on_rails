@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :articles
   # for searching 
-  post "top_films" => 'home#top_films'
+  post "searching" => 'home#searching'
 
   #we change this to cource
   root 'home#index'
