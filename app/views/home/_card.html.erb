@@ -8,7 +8,6 @@
          <p class="card-text"><%= film['overview'] %></p>
          <p class="card-text">Date release: <%= film['release_date'] %></p>
          <a href="<%= @button_url= $DOMEN + 'movie/' + film['id'].to_s + '?' +$API_KEY %>" class="btn btn-primary ">Details</a>
-
      </div>
  </div>
  <% end %>
