@@ -1,5 +1,7 @@
 # README
 
+Deployed on [Heroku](https://cryptic-tundra-13686.herokuapp.com/)
+
 ### Tasks
 
 1. [x] Search form 
@@ -21,6 +23,11 @@
 If you're clonning this repo to install all Rails gems localy type: 
 
 > bundle install
+
+**Tools**
+
+> https://github.com/tulios/json-viewer
+> https://developers.themoviedb.org/3/movies
 
 --- 
 
@@ -47,7 +54,7 @@ Things you may want to cover:
 
 * ...
 
-## Starting up the Web Server
+### Starting up the Web Server
 
 > rails server 			-> linux
 > ruby bin\rails server -> windows
@@ -66,4 +73,14 @@ Things you may want to cover:
 > ! webpacker configuration file nor found (RuntimeError)
 > rails webpacker 
 > install yarn
-> npm install yarn -g 
+> npm install yarn -g
+
+> bundler install > after updating some gems 
+
+**Install Heroku:**
+> install heroku from web site for windows
+> heroku login 
+> heroku create 
+> git push heroku master
+> rename **gem 'sqlite3'** to **gem 'pg'**
+> run: bundler install 
