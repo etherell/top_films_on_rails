@@ -15,8 +15,15 @@
     <div class="container">
         <br>
         <%= render 'home/container' %>
+        <div class="alert alert-success" role="alert">
+            <div class="text-center">
+                <p >We help you enjoy your time and find good movies to watch.<br/>
+                Here 20 Most Popular Movies from this week: </p>
+            </div>
+
+        </div>
         <div class="row mx-auto">
-        <%= yield %>
+            <%= yield %>
         </div>
         <%= render 'home/pagination'%>
     </div>

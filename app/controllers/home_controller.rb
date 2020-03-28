@@ -31,11 +31,10 @@ class HomeController < ApplicationController
 
     # check for empty result 
     if @output['results'].empty?
-      @final_output = "Error nothing to render here"
+      @error_on_request = "Error nothing to render here"
     else
       # show the JSON on page
       # @output_JSON =  @output['results']
-      @final_output = "Top 20 Best Movies This Week"
       render "home/_card"
     end
   end
