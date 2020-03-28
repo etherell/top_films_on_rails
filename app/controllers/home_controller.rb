@@ -5,14 +5,18 @@ class HomeController < ApplicationController
     # pass that data once we collected and bring it back to our app
     require 'json'
 
-    # create an instance of API url
-    @top_rated = 'movie/top_rated?';
+    # API url
+
     $API_KEY = 'api_key=f86cc31e3850cd90ef8e189703f28ac1';
-    $popular_movies= 'movie/popular?';
-    $SEARCH = 'search/movie?';
-    $img_url = 'https://image.tmdb.org/t/p/w500';
     $DOMEN = 'https://api.themoviedb.org/3/';
+    $IMG_URL = 'https://image.tmdb.org/t/p/w500';
+    
+    $top_rated = 'movie/top_rated?';
+    $popular_movies = 'movie/popular?';
+    $SEARCH = 'search/movie?';
+    
     @url = $DOMEN + $popular_movies + $API_KEY;
+
     # uniform resource indicator - URL type thing
     @uri = URI(@url)
     @response = Net::HTTP.get(@uri)
@@ -23,9 +27,9 @@ class HomeController < ApplicationController
     # @release_date = @output['release_date']
     # @overview = @output['overview']
     # @homepage = @output['homepage']
-    # @poster = @img_url + @output['poster_path'].to_s
+    # @poster = @IMG_URL + @output['poster_path'].to_s
 
-    # check for empty return result 
+    # check for empty result 
     if @output['results'].empty?
       @final_output = "Error nothing to render here"
     else
