@@ -1,6 +1,7 @@
 # README
 
-Deployed on [Heroku](https://cryptic-tundra-13686.herokuapp.com/)
+Deployed on [Heroku](https://cryptic-tundra-13686.herokuapp.com/)  
+Ruby version: 2.6.5  
 
 ### Tasks
 
@@ -77,7 +78,15 @@ Things you may want to cover:
 
 >  rails new my_pg_app -d postgresql --- to create new project with PostgreSQL database
 > bundler install > after updating some gems  
-> git restore -s  postgres -- .\README.md  
+> git restore -s  postgres -- .\README.md   
+
+Install Bundler on Mac  
+> sudo gem install bundler  
+
+Update Ruby on Mac
+> rvm install ruby@2.6.5  
+> rvm install ruby-2.6.5  
+> rvm use 2.6.5 --default 
 
 **Install Heroku:**
 > install heroku from web site for windows  
