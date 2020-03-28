@@ -56,35 +56,35 @@ Things you may want to cover:
 
 ### Starting up the Web Server
 
-> rails server 			-> linux
-> ruby bin\rails server -> windows
-> rails s 				-> short 
+> rails server 			-> linux  
+> ruby bin\rails server -> windows  
+> rails s 				-> short  
 
-> rails generate controller Welcome index
-> the controller located *app/controllers/welcome_controller.rb*
-> the view *app/view/welcome/index.html.erb*
+> rails generate controller Welcome index  
+> the controller located *app/controllers/welcome_controller.rb*  
+> the view *app/view/welcome/index.html.erb*  
 
 ---
 
 **Troubleshooting:**
 
-> ! sqlite3 could not find 
-> ! webpacker could not find 
-> ! webpacker configuration file nor found (RuntimeError)
-> rails webpacker 
-> install yarn
-> npm install yarn -g
+> ! sqlite3 could not find  
+> ! webpacker could not find  
+> ! webpacker configuration file nor found (RuntimeError)  
+> rails webpacker  
+> install yarn  
+> npm install yarn -g  
 
 >  rails new my_pg_app -d postgresql --- to create new project with PostgreSQL database
 > bundler install > after updating some gems 
 
 **Install Heroku:**
-> install heroku from web site for windows
-> heroku login 
-> heroku create 
-> git push heroku master
-> rename **gem 'sqlite3'** to **gem 'pg'**
-> run: bundler install 
+> install heroku from web site for windows  
+> heroku login  
+> heroku create  
+> git push heroku master  
+> rename **gem 'sqlite3'** to **gem 'pg'**  
+> run: bundler install  
 
 
 ---
