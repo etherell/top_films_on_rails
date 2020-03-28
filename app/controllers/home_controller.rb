@@ -6,7 +6,6 @@ class HomeController < ApplicationController
     require 'json'
 
     # API url
-
     $API_KEY = 'api_key=f86cc31e3850cd90ef8e189703f28ac1';
     $DOMEN = 'https://api.themoviedb.org/3/';
     $IMG_URL = 'https://image.tmdb.org/t/p/w500';
@@ -15,42 +14,46 @@ class HomeController < ApplicationController
     $popular_movies = 'movie/popular?';
     $SEARCH = 'search/movie?';
     
-    @url = $DOMEN + $popular_movies + $API_KEY;
-
-    # uniform resource indicator - URL type thing
-    @uri = URI(@url)
-    @response = Net::HTTP.get(@uri)
-    @output = JSON.parse(@response)
-
-    # # get only first films 
-    # @title = @output['original_title']
-    # @release_date = @output['release_date']
-    # @overview = @output['overview']
-    # @homepage = @output['homepage']
-    # @poster = @IMG_URL + @output['poster_path'].to_s
-
-    # check for empty result 
-    if @output['results'].empty?
-      @error_on_request = "Error nothing to render here"
-    else
-      # show the JSON on page
-      # @output_JSON =  @output['results']
-      render "home/_card"
-    end
-  end
-  def top_films
-    @film_name = params[:top_films]
     
-    if params[:top_films] == ""
-      @film_name = "Films is not found!"
-    elsif
-      # Do API stuff
-      @film_name
-      @url = $DOMEN + $SEARCH + $API_KEY + '&query=' + params[:top_films].to_s
+    # fetching new films
+    def fetch_films(url)
+      @url = url
+      # uniform resource indicator - URL type thing
       @uri = URI(@url)
       @response = Net::HTTP.get(@uri)
       @output = JSON.parse(@response)
-      render "home/_card"
+    end
+    
+    # render films on the page  
+    def render_films(output_request)
+      @output = output_request
+      if @output['results'].empty?
+        @error_on_request = "Error nothing to render here"
+      else
+        render "home/_card"
+      end
+    end
+
+    def get_popular_films
+      @url = $DOMEN + $popular_movies + $API_KEY;
+      @result = fetch_films(@url)
+      render_films(@result)
+      # the way to show the JSON on page 
+      # @output_JSON = @result
+    end
+    
+    get_popular_films;
+    
+
+    def searching
+      @film_name = params[:search_request]
+      if params[:top_films] == ""
+        @film_name = "Films is not found!"
+      else
+        @url = $DOMEN + $SEARCH + $API_KEY + '&query=' + @film_name.to_s
+        @result = fetch_films(@url)
+        render_films(@result)
+      end
     end
   end
 end
