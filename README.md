@@ -75,6 +75,7 @@ Things you may want to cover:
 > install yarn
 > npm install yarn -g
 
+>  rails new my_pg_app -d postgresql --- to create new project with PostgreSQL database
 > bundler install > after updating some gems 
 
 **Install Heroku:**
@@ -84,3 +85,18 @@ Things you may want to cover:
 > git push heroku master
 > rename **gem 'sqlite3'** to **gem 'pg'**
 > run: bundler install 
+
+
+---
+
+### Create useful git messages
+
+The type is contained within the title and can be one of these types:
+
+> feat: a new feature
+> fix: a bug fix
+> docs: changes to documentation
+> style: formatting, missing semi colons, etc; no code change
+> refactor: refactoring production code
+> test: adding tests, refactoring test; no production code change
+> chore: updating build tasks, package manager configs, etc; no production code change
