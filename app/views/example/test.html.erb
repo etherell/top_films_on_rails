@@ -1,9 +1,14 @@
-<h1>Example#test</h1>
+<h1>Example</h1>
 <p>Find me in app/views/example/test.html.erb</p>
 <br />
 <p> Addition:
-
 <% (0..5).each do |i| %>
     <%= "#{i}, " %>
 <% end %>
 </p>
+<section> 
+The current time is: 
+<%= @current_time %>
+</section>
+<%# = render partial: "shared/footer", locals: {start_year: '2001'} %>
+<%= render partial: "shared/footer" %>

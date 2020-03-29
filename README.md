@@ -129,3 +129,5 @@ The type is contained within the title and can be one of these types:
 - erb file can have Ruby file in <%= ...%>
 - <%= ...%> - outputs the result as a String
 - <% ... %> - does not output anything
+- do not put too match program logic into the view
+- partials are great in the sense of the DRY
