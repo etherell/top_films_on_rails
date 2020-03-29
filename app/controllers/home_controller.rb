@@ -10,7 +10,7 @@ class HomeController < ApplicationController
     $DOMEN = 'https://api.themoviedb.org/3/';
     $IMG_URL = 'https://image.tmdb.org/t/p/w500';
     
-    $top_rated = 'movie/top_rated?';
+    $TOP_RATED = 'movie/top_rated?';
     $popular_movies = 'movie/popular?';
     $SEARCH = 'search/movie?';
     
@@ -40,6 +40,13 @@ class HomeController < ApplicationController
       render_films(@result)
       # the way to show the JSON on page 
       # @output_JSON = @result
+    end
+
+    def get_top_rated_films
+      
+      @url = $DOMEN + $TOP_RATED + $API_KEY;
+      @result = fetch_films(@url)
+      render_films(@result)
     end
     
     get_popular_films;
