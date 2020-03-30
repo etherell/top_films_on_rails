@@ -4,6 +4,8 @@
 
 Ruby version: 2.6.5/2.6.3  
 If you wanna do something, first set you task to list!  
+After the merge it's save to delete the branch:  
+$ git branch -d branch1
 
 ### Tasks
 
