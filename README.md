@@ -135,3 +135,9 @@ The type is contained within the title and can be one of these types:
 - A **helper** methods takes care of recurring tasks in a view
 - debug - <%= debug @foo %> add to the HTML line ---
 - <%console %> - show the irb console at the bottom of the page
+- **Model** means data model
+- **View** responsible for the presentation of the application, takes care of rendering the web page, could render PDF, txt
+- **Controller** выполняет желаемые задачи, например найти что-то или сохранить его в переменную
+- ActiveRecord - level of abstraction that offers access to a SQL database
+- rails db:migrate  after create ew database/model
+- create using console: Country.create(name: 'Some_name', population: 1212 )
