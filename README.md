@@ -118,3 +118,7 @@ The type is contained within the title and can be one of these types:
 > refactor: refactoring production code  
 > test: adding tests, refactoring test; no production code change  
 > chore: updating build tasks, package manager configs, etc; no production code change
+
+### What does it look like
+
+![Top Rated Movies](starage/Top_Rated_Movies.png)
