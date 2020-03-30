@@ -2,8 +2,8 @@
 
 ## Yay! This project deployed on [Heroku](https://ancient-bayou-55245.herokuapp.com/)
 
-Ruby version: 2.6.5/2.6.3
-If you wanna do something, first set you task to list!
+Ruby version: 2.6.5/2.6.3  
+If you wanna do something, first set you task to list!  
 
 ### Tasks
 
@@ -13,14 +13,17 @@ If you wanna do something, first set you task to list!
 4. [x] Link to the button Details
 5. [x] Deploy to heroku
 6. [x] Change search page and url
+7. [x] Chage Database from sqlite3 to PostgreSQL
 
 ---
 
-1. Add link to top_rated movie (of all time)
+1. Change [Link] to [Top_Rated_Movie] (of all time)
 1. Change *top_films_path* to the more useful
-1. Chage Database from sqlite3 to PostgreSQL
 1. Shorten movie descriptions to 200 characters
 1. Shorten the image
+1. Remove "Coronavirus" message on search page
+1. Link [About] (add them to the *helpers* folder)
+1. Change [Home] link from *localhost* to the \#
 
 ---
 
