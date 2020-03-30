@@ -42,8 +42,7 @@ class HomeController < ApplicationController
       # @output_JSON = @result
     end
     
-    get_popular_films;
-    
+    get_popular_films;    
 
     def searching
       @film_name = params[:search_request]

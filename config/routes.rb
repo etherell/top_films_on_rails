@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   # get 'home/top_films'
   get 'welcome/index'
 
+  get 'home/most_rated'
+  
   resources :articles
+
   # for searching 
   post "searching" => 'home#searching'
 
