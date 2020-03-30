@@ -121,4 +121,4 @@ The type is contained within the title and can be one of these types:
 
 ### What does it look like
 
-![Top Rated Movies](starage/Top_Rated_Movies.png)
+![Top Rated Movies](public/Top_Rated_Movies.png)
