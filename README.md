@@ -131,3 +131,7 @@ The type is contained within the title and can be one of these types:
 - <% ... %> - does not output anything
 - do not put too match program logic into the view
 - partials are great in the sense of the DRY
+- [To create your own generator](https://guides.rubyonrails.org/generators.html)
+- A **helper** methods takes care of recurring tasks in a view
+- debug - <%= debug @foo %> add to the HTML line ---
+- <%console %> - show the irb console at the bottom of the page
