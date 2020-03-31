@@ -2,26 +2,23 @@
 <html>
 
 <head>
-    <title>Top Rated Movies</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <title>Top Rated Movies</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
-    <%= render 'home/navbar' %>
-    <div class="container">
-        <br>
-        <%# = render 'home/container' %>
-        <%# @output_JSON %>
-            <%= yield %>
-        <div class="row mx-auto">
-        </div>
-        <%# = render 'home/pagination'%>
+  <%= render 'home/navbar' %>
+  <div class="container">
+    <br>
+    <div class="row mx-auto">
+    <%= yield %>
     </div>
-    <%= render 'home/footer' %>
+  </div>
+  <%= render 'home/footer' %>
 </body>
 
 </html>
