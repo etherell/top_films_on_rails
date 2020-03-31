@@ -1,0 +1,17 @@
+<div class="card text-white bg-info m-auto" style="max-width: 18rem;">
+
+  <div class="card-header">Article № <%= @article.id %></div>
+
+  <div class="card-body text-white">
+    <h5 class="card-title">Title:
+      <%= @article.title %>
+    </h5>
+    <p class="card-text">Text:
+      <%= @article.text %>
+    </p>
+  </div>
+
+  <%= link_to  "Edit", edit_article_path(@article), class: "btn btn-primary" %>
+  <%= link_to  "Back", articles_path, class: "btn btn-secondary", class: "btn btn-secondary" %>
+
+</div>
