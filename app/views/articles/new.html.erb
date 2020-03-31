@@ -1,15 +1,20 @@
+<%# ERB language is designed to embed Ruby in HTML %>
+<%# This page is located in: /articles/new %>
+
+<h1 class="display-5 text-center">New article</h1>
+
 <%= form_with scope: :article, url: articles_path, local: true do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
- 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
+<div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-control" %>
+</div>
+
+<div class="form-group">
+    <%= form.label :text %>
+    <%= form.text_area :text, class: "form-control" %>
+</div>
+
+<div class="form-group">
+    <%= submit_tag 'Submit', class: 'btn btn-primary' %>
+</div>
 <% end %>

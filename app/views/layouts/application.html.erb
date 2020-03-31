@@ -14,18 +14,12 @@
     <%= render 'home/navbar' %>
     <div class="container">
         <br>
-        <%= render 'home/container' %>
+        <%# = render 'home/container' %>
         <%# @output_JSON %>
-        <div class="alert alert-success" role="alert">
-            <div class="text-center">
-                <p>We help you enjoy your time and find good movies to watch.<br/>
-                Here 20 Most Popular Movies from this week: </p>
-            </div>
-        </div>
-        <div class="row mx-auto">
             <%= yield %>
+        <div class="row mx-auto">
         </div>
-        <%= render 'home/pagination'%>
+        <%# = render 'home/pagination'%>
     </div>
     <%= render 'home/footer' %>
 </body>
