@@ -1,8 +1,6 @@
 <%# ERB language is designed to embed Ruby in HTML %>
 <%# This page is located in: /articles/new %>
 
-<h5 class="display-5 text-center">New article</h5>
-
 <%= form_with scope: :article, url: articles_path, local: true do |form| %>
 
 <% if @article.errors.any? %>
