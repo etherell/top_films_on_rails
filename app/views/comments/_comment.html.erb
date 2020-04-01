@@ -5,3 +5,7 @@
 <div class="card-text">Text:
   <%= comment.body %>
 </div>
+
+<%= link_to 'Destroy Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
