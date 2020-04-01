@@ -18,11 +18,6 @@ class ArticlesController < ApplicationController
 	end
 	
 	def create
-		# render method is taking very simple hash with a key :plain 
-		# params - method represent the param coming in from the form 
-		# params return the object 
-	    #render plain: params[:aticle].inspect
-	
 	  @article = Article.new(article_params)
 	  
 		if @article.save
