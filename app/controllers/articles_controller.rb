@@ -3,6 +3,10 @@
 class ArticlesController < ApplicationController
 	def index
 		@articles = Article.all
+		@search = params["seach"]
+		if @search.present?
+			@article = @search["title"]
+		end
 	end
 	
 	def show
