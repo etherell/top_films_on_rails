@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   # resource method can be used to declare a standart REST resource
   # you need to add the article resource to the config/routes.rb so the file will look as follows
   
-  resources :articles
+  resources :articles do
+    # this create comments as a nested resource with articles
+    resources :comments
+  end
 
   # for searching 
   post "searching" => 'home#searching'

@@ -9,6 +9,32 @@
     <p class="card-text">Text:
       <%= @article.text %>
     </p>
+
+    <h2>Comments</h2>
+    <% @article.comments.each do |comment| %>
+      <div class="card-title">Title:
+        <%= @comment.commenter %>
+      </div>
+      <div class="card-text">Text:
+        <%= @comment.body %>
+      </div>
+    <%  end %>
+
+    <h2> Add a comment:</h2>
+    <%= form_with(model: [@article, @article.comments.build ], local: true ) do |form| %>
+    <p>
+      <%= form.label :commenter %><br>
+      <%= form.text_field :commenter %>
+    </p>
+    <p>
+      <%= form.label :body %><br>
+      <%= form.text_area :body %>
+    </p>
+    <p>
+      <%# = link_to "Submit", form.submit, class: "btn btn-primary"%>
+      <%= form.submit %>
+      <% end %>
+    </p>
   </div>
 
   <%= link_to  "Edit", edit_article_path(@article), class: "btn btn-primary" %>

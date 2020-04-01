@@ -128,3 +128,18 @@ The type is contained within the title and can be one of these types:
 ### What does it look like
 
 ![Top Rated Movies](public/Top_Rated_Movies.png)
+
+### Work with Comment
+
+The model Comment generator generate 4 files:
+
+Create model for command: `rails generate model Comment commenter:string body:text article:references`
+
+| __File__ | __Purpose__ |
+| --- | --- |
+| db/migrate/_create_comments.rb | to create the comment table |
+| app/models/comment.rb | The comment model |
+| test/models/comment_test.rb | Testing harness for the comment model |
+| test/fixtures/comments.yml | Sample comments for use in testing |
+
+Run migration: `rails db:migrate`. They create all new tables and columns.  
