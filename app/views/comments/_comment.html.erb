@@ -1,11 +1,18 @@
-<div class="card-title">Title:
-  <%= comment.commenter %>
-</div>
+  <div class="card-body">
+    <div class="card-title"> User:
+      <b>
+        <%= comment.commenter %>
+      </b>
+    </div>
 
-<div class="card-text">Text:
-  <%= comment.body %>
-</div>
+    <div class="card-text">Comment:
+      <b>
+        <%= comment.body %>
+      </b>
+    </div>
 
-<%= link_to 'Destroy Comment', [comment.article, comment],
+    <%= link_to 'Remove', [comment.article, comment],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+               data: { confirm: 'Are you sure?' },
+               class: "btn btn-danger" %>
+  </div>
