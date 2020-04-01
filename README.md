@@ -143,3 +143,7 @@ Create model for command: `rails generate model Comment commenter:string body:te
 | test/fixtures/comments.yml | Sample comments for use in testing |
 
 Run migration: `rails db:migrate`. They create all new tables and columns.  
+
+### Rails MVC 
+
+`rake db:migrate` - checks which missing migrations still need to be applied to the database without caring about the previouse ones.  
