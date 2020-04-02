@@ -13,10 +13,14 @@
  *= require_tree .
  *= require_self
  */
+.container {
+	min-height: calc(100vh - 16.1vh);
+}
+
 footer {
-	margin-top: 2vh;
 	text-align: center;
-	flex: 0 0 auto;
-	background-color: #e6ecf0;
-	padding: 2vh 0;
+	background-color: #343a40;
+	color: #a0a3a6;
+  padding: 2vh 0;
+  height: 10vh;
 }
