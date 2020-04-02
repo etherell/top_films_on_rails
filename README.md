@@ -161,4 +161,5 @@ To generate a *model* you can use following field types:
 - **float** for storing a floating point number 
 - **integer** for storing an integer
 - **decimal** for storing a decimal number 
-- **text** as a string but considerably bigger
+- **string** a sequence of any characters (255) characters
+- **text** as a string but considerably bigger (65536) characters
