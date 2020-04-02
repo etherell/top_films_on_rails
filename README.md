@@ -7,7 +7,8 @@ If you wanna do something, first set you task to list!
 After the merge it's save to delete the branch:  
 $ git branch -d branch1  
 To prettify Ruby text inside Sublime:  
-highlight all code and type Ctrl + Shift + H 
+highlight all code and type Ctrl + Shift + H  
+[How to use rake db](https://dev.to/neshaz/how-to-use-rake-db-commands-in-the-correct-way--50o2)
 
 ### Tasks
 
@@ -92,6 +93,7 @@ Things you may want to cover:
 >  rails new my_pg_app -d postgresql --- to create new project with PostgreSQL database
 > bundler install > after updating some gems  
 > git restore -s  postgres -- .\README.md  
+> to show your db on pdAdmin connect to them with username and passwor which you created earlier
 
 ### Install Bundler on Mac
 
@@ -146,6 +148,18 @@ Create model for command: `rails generate model Comment commenter:string body:te
 
 Run migration: `rails db:migrate`. They create all new tables and columns.  
 
-### Rails MVC 
+### Work with Rails Database / Model 
 
 `rake db:migrate` - checks which missing migrations still need to be applied to the database without caring about the previouse ones.  
+`id, created_at, updated_at` was created by default for each ActiveRecord model.  
+
+To generate a *model* you can use following field types:
+- **binary** binary large object 
+- **boolean** true or false 
+- **date** to store a date 
+- **datetime** to store a date including a time
+- **float** for storing a floating point number 
+- **integer** for storing an integer
+- **decimal** for storing a decimal number 
+- **string** a sequence of any characters (255) characters
+- **text** as a string but considerably bigger (65536) characters
