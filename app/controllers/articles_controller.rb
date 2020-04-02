@@ -1,60 +1,61 @@
-# To save data we need create here some logic 
+# frozen_string_literal: true
+
+# To save data we need create here some logic
 
 class ArticlesController < ApplicationController
-	def index
-		@articles = Article.all
-		@search = params["seach"]
-		if @search.present?
-			@article = @search["title"]
-		end
-	end
-	
-	def show
-    @article = Article.find(params[:id])
-	end
-	
-	def new
-		@article = Article.new
-	end
+  def index
+    @articles = Article.all
+    @search = params['seach']
+    @article = @search['title'] if @search.present?
+  end
 
-	def edit
-		@article = Article.find(params[:id])
-	end
-	
-	def create
-	  @article = Article.new(article_params)
-	  
-		if @article.save
-			redirect_to @article
-		else
-			render 'new'
-		end
-	end
-	  
-	def update
-   @article = Article.find(params[:id])
- 
+  def show
+    @article = Article.find(params[:id])
+  end
+
+  def new
+    @article = Article.new
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def create
+    @article = Article.new(article_params)
+
+    if @article.save
+      redirect_to @article
+    else
+      render 'new'
+   end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+
     if @article.update(article_params)
       redirect_to @article
     else
       render 'edit'
-		end
-	end
-	
-	def destroy
-		@article = Article.find(params[:id])
-		@article.destroy
+     end
+  end
 
-		redirect_to articles_path
-	end
-	def searching
-		@searching = params[:search_request]
-		@article = Article.find(params[:id])
-	end
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
 
-	private
-	def article_params
-		params.require(:article).permit(:title, :text)
-	end
-	
+    redirect_to articles_path
+  end
+
+  def searching
+    @searching = params[:search_request]
+    @article = Article.find(params[:id])
+  end
+
+  private
+
+  def article_params
+    params.require(:article).permit(:title, :text)
+  end
 end
