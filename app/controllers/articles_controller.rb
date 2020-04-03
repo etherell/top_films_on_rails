@@ -7,7 +7,13 @@ class ArticlesController < ApplicationController
   $comment_form_hidden = false
 
   def index
-    @articles = Article.all
+
+    if params.has_key? :search
+      @search = params[:search]
+      @article = Article.where("title like ?", "%#{@search}%")
+      else
+        @articles = Article.all
+      end
     # @search = params['seach']
     # @article = @search['title'] if @search.present?
   end
@@ -46,6 +52,8 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    #  проверка перед удалением на ошибки 
+
     @article = Article.find(params[:id])
     @article.destroy
 
