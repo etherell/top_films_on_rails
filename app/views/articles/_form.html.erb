@@ -1,7 +1,7 @@
 <%# ERB language is designed to embed Ruby in HTML %>
 <%# This page is located in: /articles/new %>
 
-<%= form_with scope: :article, url: articles_path, local: true do |form| %>
+<%= form_with(model: @article, local: true) do |form| %>
 
 <% if @article.errors.any? %>
 <div id="error_explanation">
