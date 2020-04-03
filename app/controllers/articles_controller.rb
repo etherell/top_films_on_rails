@@ -8,12 +8,8 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    @search = params['seach']
-    @article = @search['title'] if @search.present?
-  end
-  
-  def edites
-      $comment_form_hidden = false
+    # @search = params['seach']
+    # @article = @search['title'] if @search.present?
   end
   
   def show
