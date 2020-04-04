@@ -163,3 +163,12 @@ To generate a *model* you can use following field types:
 - **decimal** for storing a decimal number 
 - **string** a sequence of any characters (255) characters
 - **text** as a string but considerably bigger (65536) characters
+
+Routing and Controllers
+
+- **form_with** отправляет формы с использованием Ajax, тем самым не осуществляя редирект всей страницы.
+- :article - определяющий объект для формы
+- :url опция которая используется если нужно вести по специальному url
+- plain: ключ который принимает метод render 
+- params - метод, это объект, представляющий параметры (или поля), приходящие от формы. принимающий
+- 

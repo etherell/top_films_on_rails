@@ -6,12 +6,21 @@ class ArticlesController < ApplicationController
   
   $comment_form_hidden = false
 
+  # здесь описаны екшены которые срабатывают автоматически при  
   def index
 
     if params.has_key? :search
       @search = params[:search]
-      @article = Article.where("title like ?", "%#{@search}%")
-      else
+      @articles = Article.where("lower(title) like ?", "%#{@search.downcase}%")
+      if @articles.size < 1 
+        @articles = Article.where("lower(text) like ?", "%#{@search.downcase}%")
+      end
+      # if @articles.size < 1
+      #   @comments = ''
+      #   @comments = Comment.where("body like ?", "%#{@search}%")
+      #   @articles = Article.has(@comments)
+      #end
+    else
         @articles = Article.all
       end
     # @search = params['seach']
@@ -58,11 +67,6 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     redirect_to articles_path
-  end
-
-  def searching
-    @searching = params[:search_request]
-    @article = Article.find(params[:id])
   end
 
   private
