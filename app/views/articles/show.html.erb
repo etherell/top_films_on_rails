@@ -20,7 +20,7 @@
     <% if @article.comments.size > 0 then  %>
     <div class="card m-auto">
       <div class="card-header bg-info">Comments</div>
-      <%= render  @article.comments %>
+      <%= render @article.comments %>
     </div>
     <% end %>
     <% if  (!$comment_form_hidden) then %>
