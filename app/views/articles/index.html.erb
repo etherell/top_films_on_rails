@@ -1,5 +1,5 @@
     <form>
-      <div class="form-row align-items-center">
+      <div class="form-row ">
         <%= form_for :search, method: "GET", html: { class: 'form-inline' } do |form| %>
         <div> <%= form.text_field :title, input_html: {value: ""},autofocus: true, placeholder: "Search by title", class: "form-control mr-sm-2"%></div>
         <div> <%= form.submit "Search", class: "btn btn-outline-primary my-2 my-sm-0" %></div>
@@ -9,10 +9,12 @@
     </form>
     <table class="table mt-2">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Title</th>
+        <th scope="col">id</th>
+        <th scope="col">Label</th>
         <th scope="col">Text</th>
         <th scope="col">Comment</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
 
       <% @articles.sort.each do |article| %>
@@ -29,3 +31,7 @@
       </tr>
       <% end %>
     </table>
+
+    <% if false then %>
+    <%= render  "articles/pagination" %>
+    <% end %>

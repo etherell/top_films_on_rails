@@ -3,12 +3,15 @@
 # To save data we need create here some logic
 
 class ArticlesController < ApplicationController
+  
+  $comment_form_hidden = false
+
   def index
     @articles = Article.all
-    @search = params['seach']
-    @article = @search['title'] if @search.present?
+    # @search = params['seach']
+    # @article = @search['title'] if @search.present?
   end
-
+  
   def show
     @article = Article.find(params[:id])
   end
@@ -20,6 +23,7 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
   end
+
 
   def create
     @article = Article.new(article_params)

@@ -1,11 +1,11 @@
   <div class="card">
-      <div class="card-header"> <b> User:
-          <%= comment.commenter %>
-        </b>
-      </div>
+    <div class="card-header"> <b> @<%= comment.commenter %> 
+      </b>
+        <%= comment.created_at.strftime(" %m %d %Y") %>
+    </div>
     <div class="card-body">
 
-      <div class="card-text border-success">Comment:
+      <div class="card-text border-success">
         <%= comment.body %>
       </div>
       <br />

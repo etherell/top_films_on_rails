@@ -1,16 +1,19 @@
-    <%= form_with(model: [@article, @article.comments.build ], local: true ) do |form| %>
-    <!--
-    
-    -->
-    <p>
-      <%= form.label :commenter %><br>
-      <%= form.text_field :commenter %>
-    </p>
-    <p>
-      <%= form.label :body %><br>
-      <%= form.text_area :body %>
-    </p>
-    <p>
-      <%# = link_to "Submit", form.submit, class: "btn btn-primary"%>
-      <%= submit_tag 'Submit', class: 'btn btn-primary' %>
-      <% end %>
+<div class="card border-success mb-3">
+  <div class="card-header bg-success"> Add a comment:</div>
+
+  <%= form_with(model: [@article, @article.comments.build ], local: true ) do |form| %>
+  <div class="card-body">
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter, class: "form-control" %>
+  </div>
+  <div class="card-body">
+    <%= form.label :body %><br>
+    <%= form.text_area :body, class: "form-control" %>
+  </div>
+  <div class="card-body">
+    <%# = link_to "Submit", form.submit, class: "btn btn-primary"%>
+    <%= submit_tag 'Submit', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+
+</div>

@@ -14,20 +14,18 @@
    method: :delete,
    data: { confirm: 'Are you sure?'},
    class: "btn btn-danger" %>
-      <%= link_to  "Edit", edit_article_path(@article), class: "btn btn-primary" %>
-      <%= link_to  "Back", articles_path, class: "btn btn-secondary", class: "btn btn-secondary" %>
+      <%= link_to  "Edit", edit_article_path(@article), class: "btn btn-info" %>
+      <%= link_to  "View All", articles_path, class: "btn btn-secondary" %>
     </div>
+    <% if @article.comments.size > 0 then  %>
     <div class="card m-auto">
       <div class="card-header bg-info">Comments</div>
       <%= render  @article.comments %>
     </div>
-    <div class="card border-success mb-3">
-      <div class="card-header bg-success"> Add a comment:</div>
-      <div class="card-body">
+    <% end %>
+    <% if  (!$comment_form_hidden) then %>
         <%= render 'comments/form' %>
-      </div>
-    </div>
-
+    <% end %>
 
   </div>
 </div>
