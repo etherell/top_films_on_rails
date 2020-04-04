@@ -64,6 +64,7 @@ Things you may want to cover:
 
 * Database initialization
 `rails db:migrate` - создание таблиц в базе данных  
+`rails db:migrate RAILS_ENV=development`
 
 * How to run the test suite
 

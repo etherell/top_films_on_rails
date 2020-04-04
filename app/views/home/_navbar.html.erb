@@ -15,15 +15,12 @@
       <li class="nav-item">
         <a class="nav-link" href="/articles">Articles</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/login">login</a>
-      </li>
     </ul>
     <%= form_tag searching_path, :method => 'POST' do %>
     <div class="form-inline my-2 my-lg-0">
       <%= text_field_tag 'search_request', nil, placeholder: "Search Film", class: "form-control mr-sm-2" %>
       <%= submit_tag 'Search', class: 'btn btn-secondary mr-2 '%>
-      <%= submit_tag 'login', class: 'btn btn-success my-2 my-sm-0'%>
+      <%= submit_tag current_user.username, class: 'btn btn-success my-2 my-sm-0'%>
       <% end %>
     </div>
 </nav>
