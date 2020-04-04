@@ -6,8 +6,23 @@ class ArticlesController < ApplicationController
   
   $comment_form_hidden = false
 
+  # здесь описаны екшены которые срабатывают автоматически при  
   def index
-    @articles = Article.all
+
+    if params.has_key? :search
+      @search = params[:search]
+      @articles = Article.where("lower(title) like ?", "%#{@search.downcase}%")
+      if @articles.size < 1 
+        @articles = Article.where("lower(text) like ?", "%#{@search.downcase}%")
+      end
+      # if @articles.size < 1
+      #   @comments = ''
+      #   @comments = Comment.where("body like ?", "%#{@search}%")
+      #   @articles = Article.has(@comments)
+      #end
+    else
+        @articles = Article.all
+      end
     # @search = params['seach']
     # @article = @search['title'] if @search.present?
   end
@@ -46,15 +61,12 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    #  проверка перед удалением на ошибки 
+
     @article = Article.find(params[:id])
     @article.destroy
 
     redirect_to articles_path
-  end
-
-  def searching
-    @searching = params[:search_request]
-    @article = Article.find(params[:id])
   end
 
   private
