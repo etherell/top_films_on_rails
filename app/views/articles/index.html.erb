@@ -23,7 +23,12 @@
         <th scope="row"><%= article.id %></th>
         <td><b><%= link_to article.title, article_path(article) %></b></td>
         <td><%= link_to article.text, article_path(article) %></td>
-        <td><%= article.comments.size %></td>
+        <td><%= article.comments.size %>
+          <%# @article[article.id].comments.each do |comment| %>
+          <b><%# = article.comments.keys %>
+            <%# = render  @article=>article.comments %> </b>
+          <%# end %>
+        </td>
         <td><%= link_to 'Edit', edit_article_path(article), class: "btn btn-info" %></td>
         <td><%= link_to 'x', article_path(article),
    method: :delete,
