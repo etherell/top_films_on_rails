@@ -15,16 +15,9 @@ class ArticlesController < ApplicationController
       if @articles.size < 1 
         @articles = Article.where("lower(text) like ?", "%#{@search.downcase}%")
       end
-      # if @articles.size < 1
-      #   @comments = ''
-      #   @comments = Comment.where("body like ?", "%#{@search}%")
-      #   @articles = Article.has(@comments)
-      #end
     else
         @articles = Article.all
       end
-    # @search = params['seach']
-    # @article = @search['title'] if @search.present?
   end
   
   def show
