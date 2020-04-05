@@ -56,10 +56,15 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration
+`rails generate controller Comments`  
+`rails g controller user new create`  
 
 * Database creation
+`rails generate model Article title:string text:tile`  
 
 * Database initialization
+`rails db:migrate` - создание таблиц в базе данных  
+`rails db:migrate RAILS_ENV=development`
 
 * How to run the test suite
 `rails d controller welcome` - удалит контролер
