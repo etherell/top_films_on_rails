@@ -70,6 +70,8 @@ Things you may want to cover:
 Додавання нових полів в існуючу таблицю:  
 `rails generate migration add_role_user role:string`
 
+Для додавання foreing_key в таблицю articles через миграцию треба використовувати міграцію: `add_reference :articles, :user, foreign_key: true`
+
 Після цього можна виконати автоматичне заповнення таблиці вик. файл seeds.rb  
 `rails db:seeds` - запускає на виконання файл db/seeds.rb, дозволяє додавати в базу даних нові полями з файлу  
 

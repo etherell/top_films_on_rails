@@ -34,9 +34,10 @@ class ArticlesController < ApplicationController
 
 
   def create
-    @user = User.find(params[:user_id])
+    @user_id = session[:id]
     
     @article = @user.articles.create(article_params)
+     #@article = Article.new(article_params)
 
     if @article.save
       redirect_to @article
@@ -59,9 +60,12 @@ class ArticlesController < ApplicationController
     #  проверка перед удалением на ошибки 
 
     @article = Article.find(params[:id])
-    @article.destroy
-
-    redirect_to articles_path
+    if  @article.errors.present?
+      throw(:abort) 
+    else
+      @article.destroy
+      redirect_to articles_path
+    end
   end
 
   private
