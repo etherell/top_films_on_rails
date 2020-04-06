@@ -1,19 +1,19 @@
   <div class="card">
-      <div class="card-header"> <b> @<%= comment.commenter %>
-          </b>
-          <%= comment.created_at.strftime(" %m.%d.%Y") %>
-      </div>
-      <div class="card-body">
+    <div class="card-header"> <b> @<%= comment.commenter %>
+      </b>
+      <%= comment.created_at.strftime(" %m.%d.%Y") %>
+    </div>
+    <div class="card-body">
 
-          <div class="card-text border-success">
-              <%= comment.body %>
-          </div>
-          <br />
-          <% if !current_user.nil?  then %>
-          <%= link_to 'Remove', [comment.article, comment],
+      <div class="card-text border-success">
+        <%= comment.body %>
+      </div>
+      <br />
+      <% if !current_user.nil?  then %>
+      <%= link_to 'Remove', [comment.article, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' },
                class: "btn btn-danger card-link" %>
-          <% end %>
-      </div>
+      <% end %>
+    </div>
   </div>

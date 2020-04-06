@@ -64,7 +64,16 @@ Things you may want to cover:
 
 * Database initialization
 `rails db:migrate` - создание таблиц в базе данных  
-`rails db:migrate RAILS_ENV=development`
+`rails db:migrate RAILS_ENV=development`  
+
+`rake db:setup`  
+Додавання нових полів в існуючу таблицю:  
+`rails generate migration add_role_user role:string`
+
+Після цього можна виконати автоматичне заповнення таблиці вик. файл seeds.rb  
+`rails db:seeds` - запускає на виконання файл db/seeds.rb, дозволяє додавати в базу даних нові полями з файлу  
+
+`rake db:reset db:migrate` видалення даних та створення таблиць заново
 
 * How to run the test suite
 `rails d controller welcome` - удалит контролер
@@ -80,7 +89,6 @@ Things you may want to cover:
 > rails server    -> linux  
 > ruby bin\rails server -> windows  
 > rails s     -> short  
-
 > rails generate controller Welcome index  
 > the controller located *app/controllers/welcome_controller.rb*  
 > the view *app/view/welcome/index.html.erb*  
@@ -160,21 +168,22 @@ Run migration: `rails db:migrate`. They create all new tables and columns.
 `id, created_at, updated_at` was created by default for each ActiveRecord model.  
 
 To generate a *model* you can use following field types:
-- **binary** binary large object 
-- **boolean** true or false 
-- **date** to store a date 
-- **datetime** to store a date including a time
-- **float** for storing a floating point number 
-- **integer** for storing an integer
-- **decimal** for storing a decimal number 
-- **string** a sequence of any characters (255) characters
-- **text** as a string but considerably bigger (65536) characters
+
+* **binary** binary large object
+* **boolean** true or false
+* **date** to store a date
+* **datetime** to store a date including a time
+* **float** for storing a floating point number
+* **integer** for storing an integer
+* **decimal** for storing a decimal number
+* **string** a sequence of any characters (255) characters
+* **text** as a string but considerably bigger (65536) characters
 
 Routing and Controllers
 
-- **form_with** отправляет формы с использованием Ajax, тем самым не осуществляя редирект всей страницы.
-- :article - определяющий объект для формы
-- :url опция которая используется если нужно вести по специальному url
-- plain: ключ который принимает метод render 
-- params - метод, это объект, представляющий параметры (или поля), приходящие от формы. принимающий
-- 
+* **form_with** отправляет формы с использованием Ajax, тем самым не осуществляя редирект всей страницы.
+
+* :article - определяющий объект для формы
+* :url опция которая используется если нужно вести по специальному url
+* plain: ключ который принимает метод render 
+* params - метод, это объект, представляющий параметры (или поля), приходящие от формы. принимающий

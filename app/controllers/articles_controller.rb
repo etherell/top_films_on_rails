@@ -34,7 +34,9 @@ class ArticlesController < ApplicationController
 
 
   def create
-    @article = Article.new(article_params)
+    @user = User.find(params[:user_id])
+    
+    @article = @user.articles.create(article_params)
 
     if @article.save
       redirect_to @article

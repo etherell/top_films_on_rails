@@ -17,5 +17,3 @@ test:
 production:
   <<: *default
   database: articles
-  username: postgres
-  password: postgres
